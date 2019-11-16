@@ -10,7 +10,7 @@ import numpy as np
 import googlemaps
 from geopy.geocoders import Nominatim
 
-class graph:
+class Graph:
         
     #for a given list of postcodes, creates the incidence matrix for the distances between them
     def __init__(self, postcodeList):
