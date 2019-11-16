@@ -28,9 +28,8 @@ def create_data_model():
     data['depot'] = 0
     return data
 
-
+"""
 def print_solution(manager, routing, assignment):
-    """Prints assignment on console."""
     print('Objective: {} miles'.format(assignment.ObjectiveValue()))
     index = routing.Start(0)
     plan_output = 'Route for vehicle 0:\n'
@@ -43,7 +42,19 @@ def print_solution(manager, routing, assignment):
     plan_output += ' {}\n'.format(manager.IndexToNode(index))
     print(plan_output)
     plan_output += 'Route distance: {}miles\n'.format(route_distance)
+"""
 
+#function that should return a list of the route and a its distance
+def print_solution(manager, routing, assignment) :
+    index = routing.Start(0)
+    route_distance = 0
+    route = []
+    while not routing.IsEnd(index):
+        route.append(manager.IndexToNode(index))
+        previous_index = index
+        index = assignment.Value(routing.NextVar(index))
+        route_distance += routing.GetArcCostForVehicle(previous_index, index, 0)
+        return route, route_distance 
 
 def main():
     """Entry point of the program."""
@@ -80,7 +91,7 @@ def main():
 
     # Print solution on console.
     if assignment:
-        print_solution(manager, routing, assignment)
+        print_solution(manager, routing, assignment)[0]
 
 
 if __name__ == '__main__':
