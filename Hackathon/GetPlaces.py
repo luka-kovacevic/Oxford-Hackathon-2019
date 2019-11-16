@@ -1,6 +1,6 @@
 # import requests
 
-import urllib, json 
+import urllib.request, json 
 
 
 def getPlaces(inquiryString, startLocation, radius): # pubs or what, latlng of user, radius, 
@@ -10,17 +10,19 @@ def getPlaces(inquiryString, startLocation, radius): # pubs or what, latlng of u
     fieldsPart = "fields=formatted_address"+ "&"
     startLocation = "location="+ startLocation + "&"
     radius = "radius="+radius+ "&"# in meters
-    url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?" + startLocation+ inputPart + fieldsPart +radius +"key=AIzaSyDXKLWHJQdqzVI1agSREbzr4AuoBKyUeuE"    
+    params = "fields=formatted_address&"
+    url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?" + startLocation+ inputPart + fieldsPart +radius +params+"key=AIzaSyDXKLWHJQdqzVI1agSREbzr4AuoBKyUeuE"    
 
-    print url
+    print (url)
     # with urllib.request.urlopen(urlToRead) as url:
     #     data = json.loads(url.read().decode())
     #     print(data)
-    response = urllib.urlopen(url)
+    response = urllib.request.urlopen(url)
 
     data = json.loads(response.read())
 
-    print data
+
+    print (data)
 
 
 getPlaces("bar", "51.7520220,-1.2577260", "50")
