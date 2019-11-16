@@ -4,6 +4,8 @@
 class RoutePostcodeConverter :
 	#when converter is initialised, it contains the route from TSM and the
 	#postcodes from the google API
+	#WHEN INIITIALISED WITH A LIST FROM THE TSM, IT SHOULD CREATE A MEMBER VARIABLE THAT IS A LIST OF POSTCODES THAT REPRESENTS THE SAME ROUTE
+	#[0,7,2,3,4,12,6,8,1,11,10,5,9,0] -(after __init__)-> [p0,p7,p2,p3,p4,p12,p6,p8,p1,p11,p10,p5,p9,p0]  
 	def __init__(self, postcodes, routeIndices) :
 		self.postcodes = postcodes
 		self.routeIndices = routeIndices
