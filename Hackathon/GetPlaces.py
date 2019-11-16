@@ -22,7 +22,8 @@ class GetPlaces:
 
         # print (data['formatted_address'])
 
-        print (data)
+        return (data)
+
 
 
 # getPlaces("bar", "51.7520220,-1.2577260", "50")
