@@ -44,7 +44,7 @@ class Graph:
         return self.destinations
     
     #takes postcode as argument, returns coordinates
-    def getPostCoord(self, postcode):
+    def convertPostCoord(self, postcode):
         geolocator = Nominatim(user_agent="")
         location = geolocator.geocode(postcode)
         return location.latitude, location.longitude 
