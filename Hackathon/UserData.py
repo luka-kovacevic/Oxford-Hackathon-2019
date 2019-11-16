@@ -1,6 +1,5 @@
-import googlemaps
 
-#encapsulates 
+#encapsulates the data inputted from the user
 class UserData :
 	def __init__(self, location,distance) :
 		self.location = location

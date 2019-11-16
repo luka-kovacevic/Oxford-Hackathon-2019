@@ -1,11 +1,11 @@
 """Simple travelling salesman problem between cities."""
 
 from __future__ import print_function
-from ortools.constraint_solver import routing_enums_pb2
+from ortools.constraint_solver imp ort routing_enums_pb2
 from ortools.constraint_solver import pywrapcp
 
 
-
+#Luka modify this such that the indice matrix you're working on can appear here 
 def create_data_model():
     """Stores the data for the problem."""
     data = {}
@@ -36,7 +36,7 @@ def print_solution(manager, routing, assignment):
     plan_output = 'Route for vehicle 0:\n'
     route_distance = 0
     while not routing.IsEnd(index):
-        plan_output += ' {} ->'.format(manager.IndexToNode(index))
+        plan_output += ' {} ,'.format(manager.IndexToNode(index))
         previous_index = index
         index = assignment.Value(routing.NextVar(index))
         route_distance += routing.GetArcCostForVehicle(previous_index, index, 0)
