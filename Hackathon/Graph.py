@@ -4,7 +4,7 @@ form a graph that we can easily apply a SPT Algorithm to
 
 Created on Sat Nov 16 12:54:10 2019
 
-@author: luka-kovacevic
+@author: lUkA-kOVaCeVIc (weird flex but okay)
 '''
 import numpy as np
 import googlemaps
